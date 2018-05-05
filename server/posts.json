@@ -2298,38 +2298,6 @@
     "timestamp": 1524450000000
   },
   {
-    "celebId": "f3b4ae04-caa1-4b7b-be95-c96c6fcc25f4",
-    "eid": "post-msg-5add790fff5c9034ee565b1c",
-    "avatar": "https://graph.facebook.com/747058235322904/picture",
-    "name": "Ngô Kiến Huy",
-    "date": "April 23rd 2018 at 12:00 am",
-    "text": "Music video Xin đừng rời xa (st Huỳnh Quốc Huy) dự kiến :  * Trailer ngày 26/04  * Full mv ngày 02/05 sau kì nghỉ lễ và ca khúc được độc quyền trên zing    Các bạn nhớ đăng kí theo dõi trang youtube của Huy để là một trong những người đầu tiên xem mv nhé, link: https://www.youtube.com/channel/UCNN7Q7sx5lsivqDf22I7Itw?sub_confirmation=1     ❤ ❤ ❤",
-    "medias": [
-      "https://media.stardary.com/cache/415x0/fb/7788/2018-04/23/7788_b5a2a5fb2ad80915977af92e3b041673.jpg"
-    ],
-    "comments": [
-      {
-        "avatar": "https://graph.facebook.com/509662262722664/picture",
-        "name": "Hà Mạnh Cường",
-        "date": "April 23rd 2018 at 2:11 am",
-        "text": "Bài nghe anh hát 1 lần trong CT âm nhạc và bước nhảy rồi hay lắm anh ạ !! Sắp ra MV luôn rồi !! Hóng quá !!"
-      },
-      {
-        "avatar": "https://graph.facebook.com/105412213593960/picture",
-        "name": "Lê Nhất",
-        "date": "April 23rd 2018 at 2:11 am",
-        "text": "Bài này a hát trong chương trình âm nhạc và bước nhảy rồi thì phải"
-      },
-      {
-        "avatar": "https://graph.facebook.com/1799527887007017/picture",
-        "name": "Thảo Uyên",
-        "date": "April 23rd 2018 at 2:11 am",
-        "text": "Ui giời...hóng quá ạ 💚💚💚"
-      }
-    ],
-    "timestamp": 1524416400000
-  },
-  {
     "celebId": "20cd2530-e493-4eca-87b6-ef4e33214086",
     "eid": "post-msg-5add7957ff5c9034ee565b3b",
     "avatar": "https://graph.facebook.com/142315561304/picture",
@@ -2357,6 +2325,38 @@
         "name": "Vân Thảo",
         "date": "April 23rd 2018 at 10:24 am",
         "text": "Deo co tien mua"
+      }
+    ],
+    "timestamp": 1524416400000
+  },
+  {
+    "celebId": "f3b4ae04-caa1-4b7b-be95-c96c6fcc25f4",
+    "eid": "post-msg-5add790fff5c9034ee565b1c",
+    "avatar": "https://graph.facebook.com/747058235322904/picture",
+    "name": "Ngô Kiến Huy",
+    "date": "April 23rd 2018 at 12:00 am",
+    "text": "Music video Xin đừng rời xa (st Huỳnh Quốc Huy) dự kiến :  * Trailer ngày 26/04  * Full mv ngày 02/05 sau kì nghỉ lễ và ca khúc được độc quyền trên zing    Các bạn nhớ đăng kí theo dõi trang youtube của Huy để là một trong những người đầu tiên xem mv nhé, link: https://www.youtube.com/channel/UCNN7Q7sx5lsivqDf22I7Itw?sub_confirmation=1     ❤ ❤ ❤",
+    "medias": [
+      "https://media.stardary.com/cache/415x0/fb/7788/2018-04/23/7788_b5a2a5fb2ad80915977af92e3b041673.jpg"
+    ],
+    "comments": [
+      {
+        "avatar": "https://graph.facebook.com/509662262722664/picture",
+        "name": "Hà Mạnh Cường",
+        "date": "April 23rd 2018 at 2:11 am",
+        "text": "Bài nghe anh hát 1 lần trong CT âm nhạc và bước nhảy rồi hay lắm anh ạ !! Sắp ra MV luôn rồi !! Hóng quá !!"
+      },
+      {
+        "avatar": "https://graph.facebook.com/105412213593960/picture",
+        "name": "Lê Nhất",
+        "date": "April 23rd 2018 at 2:11 am",
+        "text": "Bài này a hát trong chương trình âm nhạc và bước nhảy rồi thì phải"
+      },
+      {
+        "avatar": "https://graph.facebook.com/1799527887007017/picture",
+        "name": "Thảo Uyên",
+        "date": "April 23rd 2018 at 2:11 am",
+        "text": "Ui giời...hóng quá ạ 💚💚💚"
       }
     ],
     "timestamp": 1524416400000

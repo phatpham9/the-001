@@ -64,7 +64,7 @@ class Home extends React.Component {
     return(
       <div>
         <StackGrid
-          columnWidth={width <= 768 ? '100%' : 350}
+          columnWidth={width <= 768 ? '100%' : (width - 50) / 3}
           duration={0}
         >
         {this.renderPosts(this.state.posts)}
