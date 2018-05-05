@@ -14,7 +14,7 @@ yarn start
 
 ### Deploying to Heroku
 
-Click the button below and enter your `GITLAB_DOMAIN` & `GITLAB_TOKEN` to deploy
+Click the button below to deploy
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -24,7 +24,7 @@ Make sure Docker is installed on your machine run the following command:
 
 ```bash
 docker pull phatpham9/the-001
-docker run -p 80:80 -e GITLAB_DOMAIN=[your-gitlab-domain] -e GITLAB_TOKEN=[your-gitlab-token] phatpham9/the-001
+docker run -p 80:80 phatpham9/the-001
 ```
 
 ## Author
