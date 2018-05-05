@@ -1,0 +1,45 @@
+.post {
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0 !important;
+  .inner {
+    border-radius: 0;
+    border: 0;
+    padding: 15px 0 6px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    .actions {
+      margin: 12px 14px 0;
+      border-top: 1px solid #efefef;
+      padding-top: 6px;
+      a {
+        padding: 3px 5px;
+        color: #666;
+        font-size: 14px;
+        font-weight: 300;
+        width: 33.33%;
+        display: inline-block;
+        cursor: pointer;
+        .icon {
+          color: #999;
+          margin-right: 5px;
+        }
+        &:hover {
+          color: #42ab9e;
+          & .icon {
+            color: #42ab9e;
+          }
+        }
+        span {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .content {
+    padding: 0 14px 14px;
+  }
+}

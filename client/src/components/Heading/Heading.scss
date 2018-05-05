@@ -1,0 +1,72 @@
+.heading-comps {
+  .heading {
+    margin-left: 14px;
+    margin-right: 14px;
+    overflow: hidden;
+    .avatar {
+      float: left;
+      display: block;
+      img {
+        margin: 0 auto;
+        max-width: 35px;
+        border-radius: 50%;
+      }
+    }
+    .info {
+      width: 80%;
+      float: left;
+      height: 35px;
+      display: table;
+      padding-left: 10px;
+      .table-cell {
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        h3 {
+          color: #42ab9e;
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+        .date {
+          color: #999;
+          font-size: 12px;
+          font-weight: 300;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  figcaption {
+    margin: 10px 0 0;
+    .text-wrap {
+      position: relative;
+      .post-msg {
+        margin: 10px 14px;
+        .quote {
+          color: #333;
+          font-size: 14px;
+          word-wrap: break-word;
+          line-height: normal;
+        }
+        .show-more-btn {
+          font-size: 13px;
+          position: absolute;
+          bottom: -2px;
+          margin: 0;
+          background-color: #fff;
+          padding: 0 5px;
+          cursor: pointer;
+          color: #42ab9e;
+          right: 12px;
+        }
+      }
+    }
+    .thumbnail {
+      padding: 0 14px!important;
+      img {
+        max-width: 322px;
+        height: auto;
+      }
+    }
+  }
+}
