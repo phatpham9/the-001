@@ -1,0 +1,23 @@
+language: node_js
+
+node_js:
+- 9
+
+jobs:
+  include:
+  - stage: test
+    install:
+    - yarn install
+    script:
+    - yarn build
+
+cache:
+  yarn: true
+  directories:
+  - node_modules
+
+notifications:
+  email: false
+  slack:
+    secure: XrAZMu5o10JKzUiXW1CgvqGGfiourPl1SdtU154h2ndG9tG2YjCdO8BXKs35j30UvGYoUgMrJI2P33f9aJqjyA7eGzePQaBs7mUFvZFwuf1dEoihB/H2TOhmsTII++Pd/U+cV519EsbbVLuOCZs+L2PUV8YBhEeiiotczXgMwOU8mdLjaLPtTCwy1Q0j7N0OZZxVudLXCluv3BfzA1+NZ2bPLCXPSSXAKyrUX+z0o0hVVLyz2vNXdj+g1kSYA6p+6+YqtlPK8FP5vA4wZVKxShIUZd+mTx86qUokv18aZxMi5wPseDKXqHcaBzTCKbeAFfmkOr7FrCyvy+afFeX/9bM1Xq+Uiki/Sm3/E65HIMFcxlaamvCJUzrZdsQ2p9ZCH5Y6xsV19pRHrvbFSxMB5YwFbCgGnBgy3Pn+kdn64Y5XGnwQKwykYwAu+Xdti2I3xad/S5DLIHEMDEmDS6u60cA1xOLmMQUuDLPA128pHG6lAZzya2cS+Bs2Q3Ton2ud2Rv5E1ZNpCEwixKMkYlkSMxjrr6LqtYtkOC6KltXZYCC+LrIcEufZRmqpCtdBMOCj4Dks3QgLB1G31fsmDJdd61eMrORkVV6PLTx14ht4ZHYezxu/HnPlZFGa33bIANZaS/zB9Tf78SYvHyv/vzVQ8Ap3+/B4LYc9EyW3O89H4s=
+    on_pull_requests: false

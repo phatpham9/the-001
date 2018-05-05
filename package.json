@@ -1,0 +1,19 @@
+{
+  "name": "the-001",
+  "version": "0.1.0",
+  "repository": "https://github.com/phatpham9/the-001",
+  "license": "MIT",
+  "engines": {
+    "node": "^9"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  },
+  "scripts": {
+    "build": "cd client && yarn build",
+    "install": "(cd client && yarn) && (cd server && yarn)",
+    "start": "concurrently \"cd client && yarn start\" \"cd server && yarn start\"",
+    "test": "concurrently \"cd client && yarn test\" \"cd server && yarn test\"",
+    "serve": "cd server && yarn serve"
+  }
+}
