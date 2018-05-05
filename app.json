@@ -1,0 +1,11 @@
+{
+  "name": "The 001",
+  "description": "The 001 project",
+  "repository": "https://github.com/phatpham9/the-001",
+  "keywords": ["reactjs", "create-react-app", "nodejs", "expressjs"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
