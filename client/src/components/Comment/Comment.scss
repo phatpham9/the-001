@@ -1,0 +1,16 @@
+.comment {
+  border: 1px solid #e3e3e3;
+  margin-top: 15px;
+  &:first-child {
+    margin-top: 0;
+  }
+  .inner {
+    padding: 12px 0 3px 0 !important; 
+    .avatar img {
+      max-width: 25px;
+    }
+    .thumbnail {
+      display: none;
+    }
+  }
+}
