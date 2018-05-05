@@ -43,7 +43,7 @@ app.all('*', notFoundError);
 
 app.listen(PORT, HOST, async () => {
   // Do somethings when server is ready
-  runScraper();
+  // runScraper();
   loadScraperCron();
 });
 
