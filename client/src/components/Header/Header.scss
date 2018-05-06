@@ -1,5 +1,6 @@
 .header {
   margin-bottom: 5px;
+  background: white;
 }
 
 .navbar-brand {
@@ -16,5 +17,13 @@
 
   li a:hover {
     color: #ed1c24;
+  }
+
+  input[type="search"] {
+    border-radius: 1.25rem;
+  }
+
+  .dropdown-menu {
+    width: 100%;
   }
 }
