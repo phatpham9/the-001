@@ -41,7 +41,7 @@ const Heading = ({celebId, name, avatar, date, text, medias}) => (
       {medias && medias.length > 0 && <div className={`thumbnail clearfix ${medias.length === 2 ? 'layout-2' : medias.length === 3 ? 'layout-3' : medias.length > 3 ? 'layout-3 more' : 'layout-1'}`}>
         {medias.slice(0, 3).map((media, index) => (
           <div className="img" key={index}>
-            <img src={media} alt="" />
+            <img src={`/api/${media}`} alt="" />
           </div>
         ))}
       </div>}
