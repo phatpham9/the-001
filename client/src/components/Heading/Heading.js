@@ -37,8 +37,8 @@ const Heading = ({celebId, name, avatar, date, text, medias}) => (
       </div>
       <div className="thumbnail">
         { medias && medias.length > 0 &&
-          medias.map((media) => 
-            <img src={media} alt="media" />
+          medias.map((media, index) => 
+            <img key={index} src={media} alt="media" />
           )
         }
       </div>

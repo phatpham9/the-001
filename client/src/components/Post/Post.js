@@ -18,11 +18,12 @@ const Post = ({post}) => (
   <div className="post">
     <div className="inner">
       <Heading
+        key={post.celebId}
         celebId={post.celebId}
         name={post.name}
         avatar={post.avatar}
         date={post.date}
-        text={'06.05.2018 - Hẹn gặp cả nhà nhé!'}
+        text={post.text}
         medias={post.medias}
       />
       <div className="actions">
