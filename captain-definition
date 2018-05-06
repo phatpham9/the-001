@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "dockerfileLines": [
     "FROM node:9-alpine",
+    "RUN [\"mkdir\", \"/app\"]",
     "ADD ./client /app/client",
     "ADD ./server /app/server",
     "ADD ./package.json /app/package.json",
