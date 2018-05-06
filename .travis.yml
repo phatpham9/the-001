@@ -20,7 +20,7 @@ jobs:
     - docker
     script:
     - docker build -t "$DOCKER_REPO" .
-    - if [ "$TRAVIS_BRANCH" == "master" -a ! -z "$TRAVIS_TAG" ]; then
+    - if [ ! -z "$TRAVIS_TAG" ]; then
         docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
         for TAG in {"$TRAVIS_TAG",latest}; do
           docker tag "$DOCKER_REPO" "$DOCKER_REPO":"$TAG";
