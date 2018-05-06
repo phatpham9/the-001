@@ -25,5 +25,9 @@
 
   .dropdown-menu {
     width: 100%;
+
+    .dropdown-item:hover {
+      color: #ed1c24;
+    }
   }
 }
