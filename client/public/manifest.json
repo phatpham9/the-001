@@ -1,9 +1,9 @@
 {
-  "short_name": "Celebrities.Star",
+  "short_name": "Saostar Celebrities",
   "name": "Follow Your Favorite Celebrities",
   "icons": [
     {
-      "src": "./images/logo.png",
+      "src": "./images/logo.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }, {
@@ -26,6 +26,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#42ab9e",
-  "background_color": "#42ab9e"
+  "theme_color": "#ed1c24",
+  "background_color": "#ed1c24"
 }
