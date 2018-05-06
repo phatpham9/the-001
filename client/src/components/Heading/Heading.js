@@ -20,6 +20,7 @@ const Heading = ({celebId, name, avatar, date, text, medias}) => (
         <div className="avatar">
           <img src={avatar} alt="avatar" />
         </div>
+
         <div className="info">
           <div className="table-cell">
             <h3>{name}</h3>
@@ -28,6 +29,7 @@ const Heading = ({celebId, name, avatar, date, text, medias}) => (
         </div>
       </Link>
     </div>
+
     <figcaption>
       <div className="text-wrap">
         <div className="post-msg">
@@ -35,13 +37,14 @@ const Heading = ({celebId, name, avatar, date, text, medias}) => (
           {/* <p className="show-more-btn">Show more</p> */}
         </div>
       </div>
-      <div className="thumbnail">
-        { medias && medias.length > 0 &&
-          medias.map((media) => 
-            <img src={media} alt="media" />
-          )
-        }
-      </div>
+
+      {medias && medias.length > 0 && <div className={`thumbnail clearfix ${medias.length === 2 ? 'layout-2' : medias.length === 3 ? 'layout-3' : medias.length > 3 ? 'layout-3 more' : 'layout-1'}`}>
+        {medias.slice(0, 3).map((media, index) => (
+          <div className="img" key={index}>
+            <img src={media} alt="" />
+          </div>
+        ))}
+      </div>}
     </figcaption>
   </div>
 );

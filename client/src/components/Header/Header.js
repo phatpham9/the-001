@@ -8,22 +8,22 @@ const FETCH_CELEBS_URL = '/api/celebs';
 const Header = props => (
   <div className="header">
     <div className="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <Link class="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <Link className="navbar-brand" to="/">
           <img src="images/text-logo.svg" alt="Saostar" />
         </Link>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="javascript:void(0)">Celebrities <span class="sr-only">(current)</span></a>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="javascript:void(0)">Celebrities <span className="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="javascript:void(0)">My Followings <span class="sr-only">(current)</span></a>
+            <li className="nav-item active">
+              <a className="nav-link" href="javascript:void(0)">My Followings <span className="sr-only">(current)</span></a>
             </li>
           </ul>
 
@@ -91,12 +91,12 @@ class CelebsSearchBox extends Component {
 
   render() {
     return (
-      <form class="form-inline my-2 my-lg-0 dropdown">
-        <input class="form-control" type="search" placeholder="Search..." aria-label="Search..." value={this.state.key} onChange={e => this.searchCelebs(e.target.value)} />
+      <form className="form-inline my-2 my-lg-0 dropdown">
+        <input className="form-control" type="search" placeholder="Search..." aria-label="Search..." value={this.state.key} onChange={e => this.searchCelebs(e.target.value)} />
 
-        {!!this.state.key && !!this.state.results.length && <div class="dropdown-menu show">
+        {!!this.state.key && !!this.state.results.length && <div className="dropdown-menu show">
           {this.state.results.map(celeb => (
-            <Link key={celeb.id} class="dropdown-item" to={`/celeb/${celeb.id}`}  onClick={this.clearSearch}>{celeb.name}</Link>
+            <Link key={celeb.id} className="dropdown-item" to={`/celeb/${celeb.id}`}  onClick={this.clearSearch}>{celeb.name}</Link>
           ))}
         </div>}
       </form>
