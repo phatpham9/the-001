@@ -12,6 +12,12 @@
         border-radius: 50%;
       }
     }
+    .no-avatar {
+      display: none;
+      &+.info {
+        padding-left: 0;
+      }
+    }
     .info {
       width: 80%;
       float: left;
@@ -23,7 +29,7 @@
         display: table-cell;
         vertical-align: middle;
         h3 {
-          color: #42ab9e;
+          color: #ed1c24;
           font-size: 14px;
           margin-bottom: 0;
         }
@@ -42,30 +48,86 @@
       position: relative;
       .post-msg {
         margin: 10px 14px;
+        &.collapsed {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          &+.show-more-btn {
+            display: block;
+          }
+        }
         .quote {
           color: #333;
           font-size: 14px;
           word-wrap: break-word;
-          line-height: normal;
-        }
-        .show-more-btn {
-          font-size: 13px;
-          position: absolute;
-          bottom: -2px;
-          margin: 0;
-          background-color: #fff;
-          padding: 0 5px;
-          cursor: pointer;
-          color: #42ab9e;
-          right: 12px;
+          line-height: 18px;
+          margin-bottom: 0;
         }
       }
+      .show-more-btn {
+        font-size: 13px;
+        position: absolute;
+        bottom: -2px;
+        margin: 0;
+        background-color: #fff;
+        padding: 0 5px;
+        cursor: pointer;
+        color: #ed1c24;
+        right: 12px;
+        display: none;
+      }
     }
+
     .thumbnail {
-      padding: 0 14px!important;
+      padding: 0 14px !important;
+
       img {
-        max-width: 322px;
-        height: auto;
+        width: 100%;
+      }
+
+      &.layout-1 {
+        max-height: 350px;
+        overflow: hidden;
+
+        .img {
+          width: 100%;
+        }
+      }
+
+      &.layout-2 {
+        max-height: 175px;
+        overflow: hidden;
+
+        .img {
+          float: left;
+          width: calc(50% - 2.5px);
+
+          &:not(:last-child) {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &.layout-3 {
+        .img:first-child {
+          width: 100%;
+          max-height: 350px;
+          overflow: hidden;
+          margin-bottom: 5px;
+        }
+
+        .img:nth-child(2), .img:nth-child(3) {
+          float: left;
+          width: calc(50% - 2.5px);
+          max-height: 175px;
+          overflow: hidden;
+        }
+
+        .img:nth-child(2) {
+          margin-right: 5px;
+        }
       }
     }
   }

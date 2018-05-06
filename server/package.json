@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "datejs": "^1.0.0-rc3",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-validator": "^5.1.2",

@@ -1,12 +1,19 @@
 const posts = require('../../posts.json');
 
+const LIMIT = 25;
+
 const list = async (req, res) => {
-  const { celebId } = req.query;
-  const results = celebId ? posts.filter(post => post.celebId === celebId) : posts;
+  const { celebId, offset = 0 } = req.query;
+  const sortPost = (a, b) => new Date(b.timestamp) - new Date(a.timestamp);
+
+  const filteredPosts = celebId ? posts.filter(post => post.celebId === celebId) : posts;
+
+  const results = filteredPosts.sort(sortPost).slice(+offset, +offset + LIMIT);
 
   res.json({
     results,
-    total: results.length,
+    count: results.length,
+    total: filteredPosts.length,
   });
 };
 

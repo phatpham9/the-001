@@ -1,3 +1,4 @@
+require('datejs');
 const Fs = require('fs');
 const x = require('x-ray')();
 
@@ -20,7 +21,6 @@ const selectors = {
   }]),
 };
 
-
 const getPosts = async ({ id: celebId, url: sUrl }) => {
   const data = await xPromise(sUrl, sScope, [selectors]);
 
@@ -32,6 +32,7 @@ const getPosts = async ({ id: celebId, url: sUrl }) => {
         post = {
           celebId,
           ...post,
+          timestamp: (Date.parse(post.date)).getTime(),
         };
 
         posts.push(post);

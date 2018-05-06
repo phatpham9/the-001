@@ -1,0 +1,33 @@
+.header {
+  margin-bottom: 15px;
+  background: white;
+}
+
+.navbar-brand {
+  color: #ed1c24;
+
+  img {
+    width: 145px;
+    margin-top: -7.5px;
+  }
+}
+
+#navbarSupportedContent {
+  margin-bottom: -7.5px;
+
+  li a:hover {
+    color: #ed1c24;
+  }
+
+  input[type="search"] {
+    border-radius: 1.25rem;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+
+    .dropdown-item:hover {
+      color: #ed1c24;
+    }
+  }
+}
