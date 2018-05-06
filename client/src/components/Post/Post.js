@@ -22,7 +22,7 @@ const Post = ({post}) => (
         name={post.name}
         avatar={post.avatar}
         date={post.date}
-        text={'06.05.2018 - Hẹn gặp cả nhà nhé!'}
+        text={post.text}
         medias={post.medias}
       />
       <div className="actions">
@@ -42,8 +42,8 @@ const Post = ({post}) => (
     </div>
     <div className="content">
       { post.comments.length > 0 &&
-        post.comments.map((comment, index) => 
-          <Comment 
+        post.comments.map((comment, index) =>
+          <Comment
             key={index}
             name={comment.name}
             avatar={comment.avatar}
