@@ -12,6 +12,12 @@
         border-radius: 50%;
       }
     }
+    .no-avatar {
+      display: none;
+      &+.info {
+        padding-left: 0;
+      }
+    }
     .info {
       width: 80%;
       float: left;
@@ -42,23 +48,35 @@
       position: relative;
       .post-msg {
         margin: 10px 14px;
+        &.collapsed {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          &+.show-more-btn {
+            display: block;
+          }
+        }
         .quote {
           color: #333;
           font-size: 14px;
           word-wrap: break-word;
-          line-height: normal;
+          line-height: 18px;
+          margin-bottom: 0;
         }
-        .show-more-btn {
-          font-size: 13px;
-          position: absolute;
-          bottom: -2px;
-          margin: 0;
-          background-color: #fff;
-          padding: 0 5px;
-          cursor: pointer;
-          color: #ed1c24;
-          right: 12px;
-        }
+      }
+      .show-more-btn {
+        font-size: 13px;
+        position: absolute;
+        bottom: -2px;
+        margin: 0;
+        background-color: #fff;
+        padding: 0 5px;
+        cursor: pointer;
+        color: #ed1c24;
+        right: 12px;
+        display: none;
       }
     }
 

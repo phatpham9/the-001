@@ -18,6 +18,7 @@ const Post = ({post}) => (
   <div className="post">
     <div className="inner">
       <Heading
+        key={post.celebId}
         celebId={post.celebId}
         name={post.name}
         avatar={post.avatar}
@@ -42,8 +43,8 @@ const Post = ({post}) => (
     </div>
     <div className="content">
       { post.comments.length > 0 &&
-        post.comments.map((comment, index) =>
-          <Comment
+        post.comments.map((comment, index) => 
+          <Comment 
             key={index}
             name={comment.name}
             avatar={comment.avatar}

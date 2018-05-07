@@ -1,6 +1,7 @@
 import React from 'react';
-import StackGrid from "react-stack-grid";
+import StackGrid from 'react-stack-grid';
 
+import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../Post';
 import './Home.scss';
 
@@ -14,12 +15,15 @@ class Home extends React.Component {
       total: 0,
       offset: 0,
       posts: [],
+      hasMore: true
     };
 
     this.loadMore = this.loadMore.bind(this);
   }
 
   async componentDidMount() {
+    // disable scroll in Infinite scroll
+    document.getElementsByClassName("infinite-scroll-component")[0].style = 'height: auto;overflow: visible;'
     const { results, count, total } = await this.getPosts();
 
     this.setState({
@@ -43,14 +47,18 @@ class Home extends React.Component {
   renderPosts(posts) {
     if(!posts.length) return;
 
-    return posts.map((post, index) =>
+    return posts.map((post, index) => 
       <Post key={index} post={post} />
     )
   }
 
   async loadMore() {
+    if (this.state.offset === this.state.total) {
+      this.setState({ hasMore: false });
+      return;
+    }
     const { results, count, total } = await this.getPosts();
-
+    
     this.setState({
       total,
       offset: this.state.offset + count,
@@ -63,18 +71,31 @@ class Home extends React.Component {
 
     return(
       <div>
-        <StackGrid
-          columnWidth={width <= 768 ? '100%' : (width - 50) / 3}
-          duration={0}
+        <InfiniteScroll
+          dataLength={this.state.posts.length}
+          next={this.loadMore}
+          hasMore={this.state.hasMore}
+          loader={<div className="text-center">Loading ...</div>}
+          endMessage={
+            <p className="text-center">
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
         >
-        {this.renderPosts(this.state.posts)}
-        </StackGrid>
-
-        {this.state.offset < this.state.total && (
+          <StackGrid
+            columnWidth={width <= 768 ? '100%' : (width - 50) / 3}
+            duration={0}
+            gutterHeight={7}
+            gutterWidth={7}
+          >
+            {this.renderPosts(this.state.posts)}
+          </StackGrid>
+        </InfiniteScroll>
+        {/* {this.state.offset < this.state.total && (
           <div style={{textAlign: 'center'}}>
             <button style={{background: 'white', border: 'solid 1px #ccc'}} type="button" onClick={this.loadMore}>Load more...</button>
           </div>
-        )}
+        )} */}
       </div>
     );
   }
