@@ -1,4 +1,5 @@
 const posts = require('../../posts.json');
+const { MEDIA_SERVER_URL, RESOURCE: MEDIA_PATH } = require('../media');
 
 const LIMIT = 25;
 
@@ -8,7 +9,13 @@ const list = async (req, res) => {
 
   const filteredPosts = celebId ? posts.filter(post => post.celebId === celebId) : posts;
 
-  const results = filteredPosts.sort(sortPost).slice(+offset, +offset + LIMIT);
+  const results = filteredPosts
+  .sort(sortPost)
+  .slice(+offset, +offset + LIMIT)
+  .map(({ medias, ...rest }) => ({
+    ...rest,
+    medias: medias ? medias.map(media => media.replace(MEDIA_SERVER_URL, MEDIA_PATH)) : undefined,
+  }));
 
   res.json({
     results,

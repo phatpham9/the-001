@@ -1,9 +1,9 @@
 const Fetch = require('node-fetch');
 
-const FORWARD_MEDIA_SERVER = 'https://media.stardary.com';
+const MEDIA_SERVER_URL = 'https://media.stardary.com';
 
 const get = async (req, res) => {
-  const imageUrl = `${FORWARD_MEDIA_SERVER}${req.path}`;
+  const imageUrl = `${MEDIA_SERVER_URL}/${req.params[0]}`;
   const response = await Fetch(imageUrl);
   const buffer = await response.buffer();
 
@@ -11,5 +11,6 @@ const get = async (req, res) => {
 };
 
 module.exports = {
+  MEDIA_SERVER_URL,
   get,
 };

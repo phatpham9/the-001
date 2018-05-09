@@ -7,11 +7,11 @@ const Path = require('path');
 const Logger = require('morgan');
 const { NOT_FOUND } = require('http-status-codes');
 
-const { runScraper, loadScraperCron } = require('./bin/postScraper');
+const { loadScraperCron } = require('./bin/postScraper');
 const { sendNotFound } = require('./utils/http-error');
 const celebRoute = require('./celebs');
 const postRoute = require('./posts');
-const mediaCacheRoute = require('./media-cache');
+const { router: mediaRoute } = require('./media');
 
 
 // Constants
@@ -31,7 +31,7 @@ app.use(BodyParser.json());
 app.use('/api', [
   celebRoute,
   postRoute,
-  mediaCacheRoute,
+  mediaRoute,
 ]);
 
 const notFoundError = (req, res) => res.status(NOT_FOUND).json(sendNotFound());
