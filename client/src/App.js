@@ -24,4 +24,4 @@ const App = props => (
   </Router>
 );
 
-export default App;
+export default sizeMe()(App);

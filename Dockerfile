@@ -1,8 +1,8 @@
 FROM node:9-alpine
 
-ADD client/ /app/client/
-ADD server/ /app/server/
-ADD package.json /app/package.json
+ADD ./client /app/client
+ADD ./server /app/server
+ADD ./package.json /app/package.json
 
 WORKDIR /app
 
