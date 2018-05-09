@@ -11,6 +11,7 @@ const { runScraper, loadScraperCron } = require('./bin/postScraper');
 const { sendNotFound } = require('./utils/http-error');
 const celebRoute = require('./celebs');
 const postRoute = require('./posts');
+const mediaCacheRoute = require('./media-cache');
 
 
 // Constants
@@ -30,6 +31,7 @@ app.use(BodyParser.json());
 app.use('/api', [
   celebRoute,
   postRoute,
+  mediaCacheRoute,
 ]);
 
 const notFoundError = (req, res) => res.status(NOT_FOUND).json(sendNotFound());
