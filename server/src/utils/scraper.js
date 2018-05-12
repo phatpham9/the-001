@@ -5,8 +5,6 @@ const x = require('x-ray')();
 const xPromise = require('./promise-x-ray');
 const posts = require('../../posts.json');
 
-const FORWARD_MEDIA_SERVER = 'https://media.stardary.com';
-
 const sScope = '#container-grid-post .idol__content .idol__container';
 const selectors = {
   eid: '.idol__inner figcaption .post-msg@id',
@@ -31,12 +29,10 @@ const getPosts = async ({ id: celebId, url: sUrl }) => {
       const { eid } = post;
       const isExisted = !!posts.find(o => o.eid === eid);
       if (!isExisted && eid) {
-        const medias = post.medias.map(media => media.replace(`${FORWARD_MEDIA_SERVER}`, ''));
 
         post = {
           celebId,
           ...post,
-          medias,
           timestamp: (Date.parse(post.date)).getTime(),
         };
 
