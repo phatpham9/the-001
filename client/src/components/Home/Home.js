@@ -19,6 +19,7 @@ class Home extends React.Component {
     };
 
     this.loadMore = this.loadMore.bind(this);
+    this.updateCurrentGrid = this.updateCurrentGrid.bind(this);
   }
 
   async componentDidMount() {
@@ -48,7 +49,7 @@ class Home extends React.Component {
     if(!posts.length) return;
 
     return posts.map((post, index) => 
-      <Post key={index} post={post} />
+      <Post key={index} post={post} updateGrid={this.updateCurrentGrid}/>
     )
   }
 
@@ -66,9 +67,12 @@ class Home extends React.Component {
     });
   }
 
+  updateCurrentGrid() {
+    this.grid.updateLayout(); 
+  }
+
   render() {
     const { width } = this.props;
-
     return(
       <div>
         <InfiniteScroll
@@ -84,18 +88,15 @@ class Home extends React.Component {
         >
           <StackGrid
             columnWidth={width <= 768 ? '100%' : (width - 50) / 3}
+            gridRef={grid => this.grid = grid}
             duration={0}
             gutterHeight={7}
             gutterWidth={7}
+            monitorImagesLoaded={true}
           >
             {this.renderPosts(this.state.posts)}
           </StackGrid>
         </InfiniteScroll>
-        {/* {this.state.offset < this.state.total && (
-          <div style={{textAlign: 'center'}}>
-            <button style={{background: 'white', border: 'solid 1px #ccc'}} type="button" onClick={this.loadMore}>Load more...</button>
-          </div>
-        )} */}
       </div>
     );
   }

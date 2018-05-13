@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Heading from '../Heading';
+import HeadingComment from './HeadingComment';
 import './Comment.scss';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  updateGrid: PropTypes.func.isRequired,
 };
 
-const Comment = ({name, date, text}) => (
+const Comment = ({name, date, text, updateGrid}) => (
   <div className="comment">
     <div className="inner">
-      <Heading
+      <HeadingComment
         name={name}
         date={date}
         text={text}
+        updateGrid={updateGrid}
       />
     </div>
   </div>
