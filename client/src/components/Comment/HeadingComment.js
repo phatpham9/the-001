@@ -1,21 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import TimeAgo from 'react-time-ago';
+import TimeAgo from 'react-time-ago'
 
-import './Heading.scss';
+import './../Heading/Heading.scss';
 
 const propTypes = {
-  celebId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   avatar: PropTypes.string,
   date: PropTypes.string.isRequired,
-  text: PropTypes.string,
-  medias: PropTypes.array,
+  text: PropTypes.string.isRequired,
+  updateGrid: PropTypes.func.isRequired,
 };
 
-
-class Heading extends React.Component {
+class HeadingComment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,15 +30,15 @@ class Heading extends React.Component {
   }
 
   render() {
-    const {celebId, name, avatar, date, text, medias} = this.props;
-    const isTextOver = text && (text.length > 200) ? true : false;
+    const {name, avatar, date, text} = this.props;
     const dateReplace = date.replace(/th|st|nd|rd|at/g, '');
+    const isTextOver = (text.length > 200) ? true : false;
     const isCollapsed = this.state.isCollapsed;
     return(
       <div className="heading-comps">
         <div className="heading">
-          <Link to={`/celeb/${celebId}`}>
-            <div className="avatar">
+          <div>
+            <div className="no-avatar">
               <img src={avatar} alt="avatar" />
             </div>
             <div className="info">
@@ -50,7 +47,7 @@ class Heading extends React.Component {
                 <TimeAgo className="date">{new Date(dateReplace)}</TimeAgo>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
         <figcaption>
           <div className="text-wrap">
@@ -61,20 +58,12 @@ class Heading extends React.Component {
             </div>
             <p onClick={this.handleChange} className="show-more-btn"> ...show more</p>
           </div>
-
-          {medias && medias.length > 0 && <div className={`thumbnail clearfix ${medias.length === 2 ? 'layout-2' : medias.length === 3 ? 'layout-3' : medias.length > 3 ? 'layout-3 more' : 'layout-1'}`}>
-            {medias.slice(0, 3).map((media, index) => (
-              <div className="img" key={index}>
-                <img src={`/api/${media}`} alt="" />
-              </div>
-            ))}
-          </div>}
         </figcaption>
       </div>
     );
   }
 }
 
-Heading.propTypes = propTypes;
+HeadingComment.propTypes = propTypes;
 
-export default Heading;
+export default HeadingComment;
