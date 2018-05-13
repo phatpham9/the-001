@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import TimeAgo from 'react-time-ago';
 
 import './Heading.scss';
 
 const propTypes = {
-  celebId: PropTypes.string,
+  celebId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   avatar: PropTypes.string,
   date: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   medias: PropTypes.array,
 };
+
 
 class Heading extends React.Component {
   constructor(props) {
@@ -33,6 +35,7 @@ class Heading extends React.Component {
   render() {
     const {celebId, name, avatar, date, text, medias} = this.props;
     const isTextOver = text && (text.length > 200) ? true : false;
+    const dateReplace = date.replace(/th|st|nd|rd|at/g, '');
     const isCollapsed = this.state.isCollapsed;
     return(
       <div className="heading-comps">
@@ -44,7 +47,7 @@ class Heading extends React.Component {
             <div className="info">
               <div className="table-cell">
                 <h3>{name}</h3>
-                <p className="date">{date}</p>
+                <TimeAgo className="date">{new Date(dateReplace)}</TimeAgo>
               </div>
             </div>
           </Link>

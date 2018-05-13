@@ -45,14 +45,6 @@ class Home extends React.Component {
     }
   }
 
-  renderPosts(posts) {
-    if(!posts.length) return;
-
-    return posts.map((post, index) => 
-      <Post key={index} post={post} updateGrid={this.updateCurrentGrid}/>
-    )
-  }
-
   async loadMore() {
     if (this.state.offset === this.state.total) {
       this.setState({ hasMore: false });
@@ -71,6 +63,14 @@ class Home extends React.Component {
     this.grid.updateLayout(); 
   }
 
+  renderPosts(posts) {
+    if(!posts.length) return;
+
+    return posts.map((post, index) => 
+      <Post key={index} post={post} updateGrid={this.updateCurrentGrid}/>
+    )
+  }
+
   render() {
     const { width } = this.props;
     return(
@@ -81,7 +81,7 @@ class Home extends React.Component {
           hasMore={this.state.hasMore}
           loader={<div className="text-center">Loading ...</div>}
           endMessage={
-            <p className="text-center">
+            <p className="text-center mt-3">
               <b>Yay! You have seen it all</b>
             </p>
           }

@@ -5,7 +5,7 @@ import './Comment.scss';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.any.isRequired,
   text: PropTypes.string.isRequired,
   updateGrid: PropTypes.func.isRequired,
 };

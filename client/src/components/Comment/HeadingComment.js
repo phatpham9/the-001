@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TimeAgo from 'react-time-ago'
 
 import './../Heading/Heading.scss';
 
@@ -30,6 +31,7 @@ class HeadingComment extends React.Component {
 
   render() {
     const {name, avatar, date, text} = this.props;
+    const dateReplace = date.replace(/th|st|nd|rd|at/g, '');
     const isTextOver = (text.length > 200) ? true : false;
     const isCollapsed = this.state.isCollapsed;
     return(
@@ -42,7 +44,7 @@ class HeadingComment extends React.Component {
             <div className="info">
               <div className="table-cell">
                 <h3>{name}</h3>
-                <p className="date">{date}</p>
+                <TimeAgo className="date">{new Date(dateReplace)}</TimeAgo>
               </div>
             </div>
           </div>
