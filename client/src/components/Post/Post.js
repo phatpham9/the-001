@@ -40,10 +40,11 @@ const handleSendComment = (commentsPost, timestamp, updateGrid) => {
   let textComment = document.getElementById(`text-comment-${timestamp}`).value;
   const contentDiv = document.getElementById(`content-${timestamp}`);
   let comments = []
+  //eslint-disable-next-line array-callback-return
   commentsPost.map((comment, index) => {
     const commentCom = <Comment key={index} name={comment.name} date={comment.date} text={comment.text} updateGrid={updateGrid} />;
     comments = [...comments, commentCom];
-  })
+  });
   const currentComment = <Comment key={textComment} name="Anonymous" date={Date().toString()} text={textComment} updateGrid={updateGrid} />;
   comments = [...comments, currentComment];
   ReactDOM.render(comments, contentDiv);
