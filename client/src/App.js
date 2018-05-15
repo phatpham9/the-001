@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import sizeMe from 'react-sizeme';
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en'
+import timeago from 'timeago.js';
 
 import Header from './components/Header';
 import Home from './components/Home'
 import Celeb from './components/Celeb'
 import './App.scss';
 
-TimeAgo.locale(en);
+timeago.register('vi', require('timeago.js/locales/vi'));
 
 const Content = sizeMe()(props => (
   <div className="container">
