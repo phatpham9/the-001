@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import TimeAgo from 'react-time-ago';
+import TimeAgo from 'timeago-react';
 
 import './Heading.scss';
 
@@ -47,7 +47,12 @@ class Heading extends React.Component {
             <div className="info">
               <div className="table-cell">
                 <h3>{name}</h3>
-                <TimeAgo className="date">{new Date(dateReplace)}</TimeAgo>
+                <p className="date">
+                  <TimeAgo
+                    datetime={new Date(dateReplace)}
+                    locale='vi'
+                  />
+                </p>
               </div>
             </div>
           </Link>

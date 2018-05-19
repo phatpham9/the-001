@@ -42,6 +42,7 @@ class Post extends Component {
     }
     if(isShow.indexOf("show") === -1) {
       document.getElementById(`comment-box-${timestamp}`).className = 'comment-box show';
+      document.getElementById(`text-comment-${timestamp}`).focus();
     }
     this.props.updateGrid();
   }
@@ -92,7 +93,7 @@ class Post extends Component {
           </a>
         </div>
       </div>
-      <div className="comment-box" id={`comment-box-${post.timestamp}`}>  
+      <div className="comment-box" id={`comment-box-${post.timestamp}`}>
         <input ref={(ref) => this.input = ref} type="text" placeholder="Write a comment..." id={`text-comment-${post.timestamp}`}/>
         <div className="btn-enter" onClick={this.handleSendComment}>
           <FontAwesomeIcon icon={faPaperPlane} className="icon" />
